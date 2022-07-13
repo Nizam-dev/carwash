@@ -13,13 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage');
-});
 
+Route::get("/",[App\Http\Controllers\Customer\LandingpageController::class,"index"]);
 Route::get("booking",[App\Http\Controllers\Customer\bookingController::class,"index"]);
 
+Route::post("getpaketlayanan",[App\Http\Controllers\Customer\getPaketLayananController::class,"getpaketlayanan"]);
 
-Route::get("dashboard",[App\Http\Controllers\DashboardController::class,"index"]);
-Route::get("paket",[App\Http\Controllers\PaketController::class,"index"]);
-Route::get("layanan",[App\Http\Controllers\LayananController::class,"index"]);
+
+Route::get("login",[App\Http\Controllers\LoginController::class,"index"])->name('login');
+Route::post("login",[App\Http\Controllers\LoginController::class,"login"])->name('login');
+
+Auth::routes(['register' => false,'login' => false]);
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Admin
+
+Route::get("dashboard",[App\Http\Controllers\Admin\DashboardController::class,"index"]);
+Route::get("paket",[App\Http\Controllers\Admin\PaketController::class,"index"]);
+Route::get("detailing",[App\Http\Controllers\Admin\DetailingController::class,"index"]);

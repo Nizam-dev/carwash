@@ -45,6 +45,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="carousel-car owl-carousel">
+                    
+                    @foreach($pakets as $paket)
                     <div class="item">
                         <div class="car-wrap rounded ftco-animate">
                             <div class="img rounded text-center">
@@ -52,15 +54,16 @@
                             class="flaticon-car"></span></div>
                             </div>
                             <div class="text">
-                                <h2 class="mb-0"><a href="#">Quick Wash</a></h2>
+                                <h2 class="mb-0"><a href="#">{{$paket->nama_paket}}</a></h2>
                                 <div class="d-flex mb-3">
-                                    <span class="cat">Cheverolet</span>
-                                    <p class="price ml-auto">500000 <span>/3day</span></p>
+                                    <span class="cat">A / B / Extra</span>
+                                    <p class="price ml-auto"><span>Mulai</span> {{$paket->harga->where('jenis_kendaraan','A')->first()->harga_paket}}</p>
                                 </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Pesan</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                <p class="d-flex mb-0 d-block"><a href="{{url('booking')}}" class="btn btn-primary py-2 mr-1">Pesan</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
                             </div>
                         </div>
                     </div>
+                    @endforeach
                   
                 </div>
             </div>
@@ -80,11 +83,13 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="services services-2 w-100 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center"><span
-                            class="flaticon-wedding-car"></span></div>
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-mobile"></span>
+                    </div>
                     <div class="text w-100">
-                        <h3 class="heading mb-2">Wedding Ceremony</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3 class="heading mb-2">Booking</h3>
+                        <p>
+                        Customer melakukan booking mengisi data diri dan memilih paket.
                         </p>
                     </div>
                 </div>
@@ -92,10 +97,11 @@
             <div class="col-md-3">
                 <div class="services services-2 w-100 text-center">
                     <div class="icon d-flex align-items-center justify-content-center"><span
-                            class="flaticon-transportation"></span></div>
+                            class="fa fa-comments"></span></div>
                     <div class="text w-100">
-                        <h3 class="heading mb-2">City Transfer</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3 class="heading mb-2">Menunggu Pesan Antrian</h3>
+                        <p>
+                            Setelah melakukan booking customer akan mendapat pesan nomor antrian melalui WhatsApp.
                         </p>
                     </div>
                 </div>
@@ -105,8 +111,9 @@
                     <div class="icon d-flex align-items-center justify-content-center"><span
                             class="flaticon-car"></span></div>
                     <div class="text w-100">
-                        <h3 class="heading mb-2">Airport Transfer</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3 class="heading mb-2">Pengerjaan</h3>
+                        <p>
+                            Mobil dikerjakan sesuai pesanan.
                         </p>
                     </div>
                 </div>
@@ -116,8 +123,9 @@
                     <div class="icon d-flex align-items-center justify-content-center"><span
                             class="flaticon-transportation"></span></div>
                     <div class="text w-100">
-                        <h3 class="heading mb-2">Whole City Tour</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                        <h3 class="heading mb-2">Selesai</h3>
+                        <p>
+                            Customer mendapat pesan melalui whatsapp ketika mobil selesai.
                         </p>
                     </div>
                 </div>

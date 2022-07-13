@@ -11,8 +11,7 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Paket</th>
-                        <th>Deskripsi</th>
+                        <th>Detailing</th>
                         <th>A</th>
                         <th>B</th>
                         <th>Extra</th>
@@ -20,20 +19,17 @@
                 </thead>
 
                 <tbody>
-                    
-                @foreach($pakets as $paket)
+                    @foreach($detailings as $detailing)
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$paket->nama_paket}}</td>
-                        <td>
-                            <i class="fa fa-check text-success"></i>
-                            {!!str_replace(', ', '<br><i class="fa fa-check text-success"></i> ', $paket->deskripsi_paket)!!}
-                        </td>
-                        <td>{{$paket->harga->where('jenis_kendaraan','A')->first()->harga_paket}}</td>
-                        <td>{{$paket->harga->where('jenis_kendaraan','B')->first()->harga_paket}}</td>
-                        <td>{{$paket->harga->where('jenis_kendaraan','Extra')->first()->harga_paket}}</td>
+                        <td>{{$detailing->nama_detailing}}</td>
+                        <td>{{$detailing->harga->where('jenis_kendaraan','A')->first()->harga_detailing}}</td>
+                        <td>{{$detailing->harga->where('jenis_kendaraan','B')->first()->harga_detailing}}</td>
+                        <td>{{$detailing->harga->where('jenis_kendaraan','Extra')->first()->harga_detailing}}</td>
                     </tr>
-                @endforeach
+                    @endforeach
+
+
 
                 </tbody>
             </table>
