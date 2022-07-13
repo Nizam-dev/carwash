@@ -41,7 +41,8 @@
 }
 
 .layananku .services:hover,
-.det .card:hover {
+.det .card:hover,
+.det .card.active {
     background: #2889a71a;
     box-shadow: -2px 2px 5px lightblue;
 }
@@ -117,7 +118,7 @@ input[type=number] {
                         <select name="" id="jenis_mobil" class="form-control">
                             <option value="" disabled selected>Pilih Jenis Mobil</option>
                             @foreach($kendaraans as $kendaraan)
-                            <option value="{{$kendaraan->id}}">{{$kendaraan->nama_kendaraan}}</option>
+                            <option jenis_kendaraan="{{$kendaraan->jenis_kendaraan}}" value="{{$kendaraan->id}}">{{$kendaraan->nama_kendaraan}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -194,12 +195,22 @@ function pilihDetailing(el) {
     let cek = $(el).find('input[type="checkbox"]');
     if (cek.prop("checked")) {
         cek.prop('checked', false)
+        $(el).find(".card").removeClass('active')
     } else {
         cek.prop('checked', true)
+        $(el).find(".card").addClass('active')
     }
 }
 
+var jenis_kendaraan_ini = "";
 $('#jenis_mobil').on('change', () => {
+   if(jenis_kendaraan_ini != $('#jenis_mobil option:selected').attr('jenis_kendaraan')){
+    getLayanan()
+   }
+   jenis_kendaraan_ini = $('#jenis_mobil option:selected').attr('jenis_kendaraan')
+})
+
+function getLayanan() {
     axios.post('getpaketlayanan', {
             jenis_kendaraan: $('#jenis_mobil').val()
         })
@@ -265,6 +276,6 @@ $('#jenis_mobil').on('change', () => {
             })
 
         })
-})
+}
 </script>
 @endsection
