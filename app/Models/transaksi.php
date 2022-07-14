@@ -17,4 +17,15 @@ class transaksi extends Model
         'total',
         'status',
     ];
+
+    public function detailing()
+    {
+        return $this->hasMany(pesanan_detailing::class);
+    }
+
+    public function cuci()
+    {
+        return $this->hasMany(pesanan_paket::class);
+    }
+
 }

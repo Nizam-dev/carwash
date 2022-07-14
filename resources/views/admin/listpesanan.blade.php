@@ -12,7 +12,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>No Hp</th>
                         <th>Plat Nomor</th>
                         <th>Kendaraan</th>
                         <th>Nama Paket</th>
@@ -22,6 +21,19 @@
 
                 <tbody>
                  
+                    @foreach($pesanans as $pesanan)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$pesanan->nama}}</td>
+                            <td>{{$pesanan->plat_nomor}}</td>
+                            <td>{{$pesanan->nama_kendaraan}}</td>
+                            <td>
+                                
+                            </td>
+                            <td>{{$pesanan->total}}</td>
+
+                        </tr>
+                    @endforeach 
 
                 </tbody>
             </table>
