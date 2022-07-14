@@ -15,5 +15,6 @@ class transaksi extends Model
         'kendaraan_id',
         'customer_id',
         'total',
+        'status',
     ];
 }

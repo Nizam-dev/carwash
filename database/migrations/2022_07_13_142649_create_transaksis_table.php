@@ -15,12 +15,13 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->string('transaksi_id');
-            $table->integer('nomor_antrian');
+            $table->string('transaksi_id')->nullable();
+            $table->integer('nomor_antrian')->nullable();
             $table->string('plat_nomor');
             $table->foreignId('kendaraan_id')->constrained();
             $table->foreignId('customer_id')->constrained();
-            $table->bigInteger('total');
+            $table->bigInteger('total')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

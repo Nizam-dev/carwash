@@ -14,4 +14,25 @@
 <script src="{{asset('public/landingpage/js/scrollax.min.js')}}"></script>
 <script src="{{asset('public/landingpage/js/main.js')}}"></script>
 
+<script>
+    function validateForm(el){
+          let form = el
+          $(el).find(".is-invalid").removeClass("is-invalid")
+            if($(form)[0].checkValidity()){
+              return true;
+            }else{
+                $(form+" :invalid").each(function(i, obj) {
+                    $(obj).addClass("is-invalid")
+                });
+                $(form+" :invalid").first().focus()
+                return false;
+            }
+        }
+
+        function resetvalidateForm(el){
+          let form = el
+          $(el).find(".is-invalid").removeClass("is-invalid")
+        }
+</script>
+
 @yield('js')

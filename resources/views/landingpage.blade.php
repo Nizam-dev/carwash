@@ -137,3 +137,16 @@
 
 
 @endsection
+
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    @if(session()->has('sukses'))
+    Swal.fire({
+        icon: 'success',
+        title: 'Pesanan Berhasil dikirim',
+        text: 'Silahkan Menunggu Konfirmasi Admin via whatsapp'
+        })
+    @endif
+</script>
+@endsection

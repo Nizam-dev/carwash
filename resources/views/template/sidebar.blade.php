@@ -35,10 +35,10 @@
     </li>
 
 
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item {{request()->is('listpesanan') ? 'active':''}}">
+        <a class="nav-link" href="{{url('listpesanan')}}">
             <i class="fas fa-bell fa-bell-alt"></i>
-            <span>Notifikasi</span></a>
+            <span>List Pesanan</span></a>
     </li>
 
     <li class="nav-item">
