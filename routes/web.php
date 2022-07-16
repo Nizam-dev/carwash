@@ -31,6 +31,15 @@ Auth::routes(['register' => false,'login' => false]);
 // Admin
 
 Route::get("dashboard",[App\Http\Controllers\Admin\DashboardController::class,"index"]);
-Route::get("paket",[App\Http\Controllers\Admin\PaketController::class,"index"]);
-Route::get("detailing",[App\Http\Controllers\Admin\DetailingController::class,"index"]);
+Route::resource("paket",App\Http\Controllers\Admin\PaketController::class);
+Route::resource("detailing",App\Http\Controllers\Admin\DetailingController::class);
+Route::resource("kendaraan",App\Http\Controllers\Admin\KendaraanController::class);
+
 Route::get("listpesanan",[App\Http\Controllers\Admin\ListPesananController::class,"index"]);
+
+Route::post("verifikasipesanan",[App\Http\Controllers\Admin\ListPesananController::class,"verifikasipesanan"]);
+Route::post("verifikasipesananselesai",[App\Http\Controllers\Admin\ListPesananController::class,"verifikasipesananselesai"]);
+
+Route::get("laporan",[App\Http\Controllers\Admin\LaporanController::class,"index"]);
+Route::get("laporanpdf",[App\Http\Controllers\Admin\LaporanController::class,"laporanpdf"]);
+

@@ -19,6 +19,12 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item {{request()->is('kendaraan') ? 'active':''}}">
+        <a class="nav-link" href="{{url('kendaraan')}}">
+            <i class="fas fa-car fa-car-alt"></i>
+            <span>Kendaraan</span></a>
+    </li>
+
     <li class="nav-item {{request()->is('paket') || request()->is('detailing') ? 'active':''}}">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="false" aria-controls="collapseUtilities">
@@ -41,8 +47,8 @@
             <span>List Pesanan</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item {{request()->is('laporan') ? 'active':''}}">
+        <a class="nav-link" href="{{url('laporan')}}">
             <i class="fas fa-file fa-file-alt"></i>
             <span>Laporan</span></a>
     </li>

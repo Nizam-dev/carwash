@@ -20,7 +20,7 @@
                     <h1 class="mb-4">Cuci &amp; Salon Mobil Profesional</h1>
                     <p style="font-size: 18px;">Tunggu di rumah saja, jasa cuci dan salon mobil panggilan kami siap
                         membersihkan mobil Anda kapanpun dibutuhkan.</p>
-                    <a href="" class="icon-wrap popup-vimeo d-flex align-items-center mt-4 justify-content-center">
+                    <a href="{{url('booking')}}" class="icon-wrap d-flex align-items-center mt-4 justify-content-center">
                         <div class="btn  btn-success">
                             <i class="fa fa-car"> Layanan</i>
                         </div>

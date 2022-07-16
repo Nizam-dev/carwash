@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin 2 - Dashboard</title>
+    <title>Carwash</title>
     @include("template.css")
 </head>
 
@@ -95,6 +95,8 @@
 
     <script src="{{url('public/template/vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{url('public/template/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     @yield('js')
 

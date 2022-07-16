@@ -13,6 +13,12 @@
         </div>
     </form>
 
+    <?php 
+        $notifs = App\Models\transaksi::join('customers','customers.id','transaksis.customer_id')
+        ->select('transaksis.*','customers.nama')
+        ->where('transaksis.status','pemesanan')->latest()->take(10)->get();;
+    ?>
+
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
 
@@ -21,7 +27,7 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
                 <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
+                <span class="badge badge-danger badge-counter">{{$notifs->count()}}</span>
             </a>
             <!-- Dropdown - Alerts -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -29,18 +35,21 @@
                 <h6 class="dropdown-header">
                     Notifikasi
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                
+                @foreach($notifs as $notif)
+                <a class="dropdown-item d-flex align-items-center" href="{{url('listpesanan')}}">
                     <div class="mr-3">
                         <div class="icon-circle bg-primary">
                             <i class="fas fa-car text-white"></i>
                         </div>
                     </div>
                     <div>
-                        <div class="small text-gray-500">Now</div>
-                        <div class="small text-black">Nizam DK 233141 UZ</div>
-                        <span class="font-weight-bold">Melakukan Pesanan Quick Wash</span>
+                        <div class="small text-gray-500">{{$notif->created_at->diffForHumans()}}</div>
+                        <div class="small text-black">{{$notif->nama.' '.$notif->plat_nomor}}</div>
+                        <span class="font-weight-bold">Melakukan Pesanan </span>
                     </div>
                 </a>
+                @endforeach
                
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
             </div>
