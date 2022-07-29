@@ -94,11 +94,9 @@ class ListPesananController extends Controller
             ];
         
             $response = $this->apiKirimWaRequest($reqParams);
-            echo $response['body'];
         } catch (Exception $e) {
             print_r($e);
         }
-        // return $message;
     }
 
     function apiKirimWaRequest(array $params) {
