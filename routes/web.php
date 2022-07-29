@@ -43,3 +43,5 @@ Route::post("verifikasipesananselesai",[App\Http\Controllers\Admin\ListPesananCo
 Route::get("laporan",[App\Http\Controllers\Admin\LaporanController::class,"index"]);
 Route::get("laporanpdf",[App\Http\Controllers\Admin\LaporanController::class,"laporanpdf"]);
 
+Route::resource("profil",App\Http\Controllers\Admin\ProfilController::class);
+

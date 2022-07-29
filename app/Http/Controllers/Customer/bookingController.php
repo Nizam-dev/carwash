@@ -66,6 +66,9 @@ class bookingController extends Controller
             "status"=>"pemesanan"
         ]);
 
-        return redirect('/')->with("sukses","Berhasil Melakukan Pesanan");
+        $no_antrian = transaksi::where('status','pemesanan')->count();
+        $mobil = kendaraan::find($request->jenis_mobil_customer)->nama_kendaraan;
+
+        return redirect('/')->with("sukses",$request->nama_customer." Mobil Anda : ".$mobil." Berhasil Melakukan Pesanan dengan Nomor Antrian : ".$no_antrian);
     }
 }

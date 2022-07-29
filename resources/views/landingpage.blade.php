@@ -145,7 +145,7 @@
     Swal.fire({
         icon: 'success',
         title: 'Pesanan Berhasil dikirim',
-        text: 'Silahkan Menunggu Konfirmasi Admin via whatsapp'
+        text: "{{session()->get('sukses')}}"
         })
     @endif
 </script>
