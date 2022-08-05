@@ -26,7 +26,7 @@ class bookingController extends Controller
             $customer = customer::create([
                 'nama'=>$request->nama_customer,
                 'no_wa'=>$request->no_hp_customer,
-                'alamat'=>$request->alamat_customer
+                // 'alamat'=>$request->alamat_customer
             ]);
         }
 
@@ -46,6 +46,7 @@ class bookingController extends Controller
             pesanan_paket::create([
                 "transaksi_id"=>$transaksi->id,
                 "paket_cuci_id"=>$request->paket_cuci_customer,
+                "harga"=>$paket->harga_paket
             ]);
         }
 
@@ -56,7 +57,8 @@ class bookingController extends Controller
                 $total = $total+$paket->harga_detailing;
                 pesanan_detailing::create([
                     "transaksi_id"=>$transaksi->id,
-                    "paket_detailing_id"=>$detail
+                    "paket_detailing_id"=>$detail,
+                    "harga"=>$paket->harga_detailing
                 ]);
             }
         }

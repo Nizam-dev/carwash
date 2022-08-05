@@ -109,10 +109,7 @@
                             <input name='no_hp' type="number" class="form-control" placeholder="83xxxxxxx" required>
                         </div>
                     </div>
-                    <div class="col-md-12 form-group">
-                        <label for="">Alamat</label>
-                        <input type="text" name="alamat" class="form-control" required>
-                    </div>
+                  
                     <div class="col-md-6 form-group">
                         <label for="">Jenis Mobil</label>
                         <select name="jenis_mobil" id="jenis_mobil" class="form-control" required>
@@ -388,7 +385,6 @@
         $("#form-data-kirim").append(`
             <input name='nama_customer' value='${nama}'>
             <input name='no_hp_customer' value='62${no_hp}'>
-            <input name='alamat_customer' value='${alamat}'>
             <input name='jenis_mobil_customer' value='${jenis_mobil}'>
             <input name='plat_nomor_customer' value='${plat_nomor}'>
             <input name='plat_nomor_customer' value='${plat_nomor}'>

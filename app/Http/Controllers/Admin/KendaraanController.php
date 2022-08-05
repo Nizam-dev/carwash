@@ -30,5 +30,17 @@ class KendaraanController extends Controller
         return redirect()->back()->with("sukses","Kendaraan Berhasil ditambahkan");
     }
 
+    public function update($id,Request $request)
+    {
+        $cek = kendaraan::where("nama_kendaraan",$request->nama_kendaraan)
+        ->where("jenis_kendaraan",$request->jenis_kendaraan)
+        ->first();
+        if($cek != null){
+            return redirect()->back()->with("gagal","Kendaraan Sudah Ada");
+        }
+        kendaraan::find($id)->update($request->all());
+        return redirect()->back()->with("sukses","Kendaraan Berhasil diupdate");
+    }
+
    
 }

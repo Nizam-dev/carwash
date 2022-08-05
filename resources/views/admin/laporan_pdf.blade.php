@@ -20,6 +20,7 @@
                     <tr>
                         <th>No</th>
                         <th>Bulan</th>
+                        <th>Nama Paket</th>
                         <th>Jumlah Pesanan</th>
                         <th>Total Pendapatan</th>
                     </tr>
@@ -27,10 +28,21 @@
 
                 <tbody>
                  
-                    @foreach($laporans as $laporan)
+                <?php $num=1;?>
+                    @foreach($laporan_paket as $laporan)
                         <tr>
-                            <td>{{$loop->iteration}}</td>
+                            <td>{{$num++}}</td>
                             <td>{{$laporan->bulan}}</td>
+                            <td>{{$laporan->nama_paket}}</td>
+                            <td>{{$laporan->total_pesanan}}</td>
+                            <td>@currency($laporan->total_pendapatan)</td>
+                        </tr>
+                    @endforeach
+                    @foreach($laporan_detailing as $laporan)
+                        <tr>
+                            <td>{{$num++}}</td>
+                            <td>{{$laporan->bulan}}</td>
+                            <td>{{$laporan->nama_paket}}</td>
                             <td>{{$laporan->total_pesanan}}</td>
                             <td>@currency($laporan->total_pendapatan)</td>
                         </tr>

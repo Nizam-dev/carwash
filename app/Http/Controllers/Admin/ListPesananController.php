@@ -42,7 +42,7 @@ class ListPesananController extends Controller
             "status"=>"selesai",
         ]);
 
-        $this->kirimPesan($request->id,"Selesai di proses.");
+        // $this->kirimPesan($request->id,"Selesai di proses.");
     
         return redirect()->back()->with('sukses-selesai',"Pesanan Telah Selesai");
     }

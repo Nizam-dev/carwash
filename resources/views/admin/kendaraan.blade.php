@@ -17,6 +17,7 @@
                         <th>No</th>
                         <th>Nama Kendaraan</th>
                         <th>Jenis Kendaraan</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
 
@@ -27,6 +28,11 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$kendaraan->nama_kendaraan}}</td>
                         <td>{{$kendaraan->jenis_kendaraan}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-warning" onclick="edit({{$kendaraan}})">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </td>
                     </tr>
 
                     @endforeach
@@ -44,7 +50,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="tambahModalLabel">Edit Harga</h5>
+        <h5 class="modal-title" id="tambahModalLabel">Tambah Mobil</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -53,6 +59,7 @@
       <form action="{{url('kendaraan')}}" method="post">
 
       <div class="modal-body">
+      @method('patch')
             @csrf
             <input type="text" name="id" class="d-none">
             <div class="form-group">
@@ -101,8 +108,21 @@
 $("#dataTable").dataTable()
 
 $("#tambahkendaraan").on('click',()=>{
+    $("#tambahModal form").attr("action","{{url('kendaraan')}}")
+    $("#tambahModalLabel").html("Tambah Mobil")
+    $("[name='_method']").remove()
+    $("input[name='nama_kendaraan']").val("")
     $("#tambahModal").modal("show")
 })
+
+function edit(kendaraan) {
+    $("#tambahModal form").attr("action",`{{url('kendaraan')}}/${kendaraan.id}`)
+    $("#tambahModal .modal-body").prepend(`<input type="hidden" name="_method" value="patch">`)
+    $("#tambahModalLabel").html("Edit Mobil")
+    $("input[name='nama_kendaraan']").val(kendaraan.nama_kendaraan)
+    $("select[name='jenis_kendaraan']").val(kendaraan.jenis_kendaraan)
+    $("#tambahModal").modal("show")
+}
 </script>
 
 @endsection

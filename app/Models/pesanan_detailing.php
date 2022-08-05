@@ -11,5 +11,6 @@ class pesanan_detailing extends Model
     protected $fillable = [
        'transaksi_id',
        'paket_detailing_id',
+       'harga'
     ];
 }

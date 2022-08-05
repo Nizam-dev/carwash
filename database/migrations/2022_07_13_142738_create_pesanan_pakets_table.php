@@ -17,6 +17,7 @@ class CreatePesananPaketsTable extends Migration
             $table->id();
             $table->foreignId('transaksi_id')->constrained();
             $table->foreignId('paket_cuci_id')->constrained();
+            $table->string('harga');
             $table->timestamps();
         });
     }

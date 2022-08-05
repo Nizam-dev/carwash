@@ -17,6 +17,7 @@ class CreatePesananDetailingsTable extends Migration
             $table->id();
             $table->foreignId('transaksi_id')->constrained();
             $table->foreignId('paket_detailing_id')->constrained();
+            $table->string('harga');
             $table->timestamps();
         });
     }
