@@ -41,6 +41,16 @@ class DashboardController extends Controller
             $pl = $det->total > $cuci->total ? paket_detailing::find($det->paket_detailing_id)->nama_detailing: paket_cuci::find($cuci->paket_cuci_id)->nama_paket;
         }
 
-        return view("admin.dashboard",compact('totalhariini','totalbulanini','pl'));
+        $bulanan = transaksi::where('status',"!=","pending")
+        ->select(
+            DB::raw('sum(total) as total_pendapatan'), 
+            DB::raw('count(total) as total_pesanan'),
+            DB::raw("DATE_FORMAT(created_at,'%M') as bulan")
+        )
+        ->groupBy('bulan')
+        ->get();
+
+        
+        return view("admin.dashboard",compact('totalhariini','totalbulanini','pl','bulanan'));
     }
 }
