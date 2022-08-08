@@ -42,14 +42,14 @@ class ListPesananController extends Controller
             "status"=>"selesai",
         ]);
 
-        // $this->kirimPesan($request->id,"Selesai di proses.");
+        $this->kirimPesan($request->id);
     
         return redirect()->back()->with('sukses-selesai',"Pesanan Telah Selesai");
     }
 
     
 
-    public function kirimPesan($id,$pesan)
+    public function kirimPesan($id)
     {
         $transaksi = transaksi::where("transaksis.id",$id)
         ->join("customers","customers.id","transaksis.customer_id")
@@ -60,29 +60,34 @@ class ListPesananController extends Controller
         ->first();
         $pesanan="";
         if(!$transaksi->cuci->isEmpty()){
+            $pesanan = $pesanan."\n*_WASH_* : \n";
             foreach($transaksi->cuci as $cuci){
                 $pesanan = $pesanan."- ".$cuci->nama_paket."\n";
             }
         }
         
         if(!$transaksi->detailing->isEmpty()){
+            $pesanan = $pesanan."\n*_Detailing_* : \n";
             foreach($transaksi->detailing as $detailing){
                 $pesanan = $pesanan."- ".$detailing->nama_detailing."\n";
             }
         }
             
 
-        $message = "Hallo, ".$transaksi->nama
+        $message = "*M2 AUTOCARE - BANYUWANGI*"
+        ."\n*_CAR WASH-CAFE-DETAILING_*"
+        ."\n\nHallo : ".$transaksi->nama
         ."\nKendaraan Anda : ".$transaksi->nama_kendaraan
         ."\nPlat Nomor : ".$transaksi->plat_nomor
-        ."\nDengan Pesanan : \n" 
+        ."\n_Dengan Pesanan Berikut :_ \n" 
         .$pesanan
-        .$pesan
+        ."\n_Telah Selesai_"
+        ."\n_Terimakasih Atas Kepercayaan Anda Kepada Kami._"
         ;
 
         try {
             $reqParams = [
-            'token' => 'SlEL/A0TmxsOfq7+WIqHPjbEZWC77gIWuI8L1ZDZX/y76KZgz02lqkDFt0Ei65m0-nizam',
+            'token' => 'sHU5TstfmEJ1Iah0FMEEwb0KBWXzGrVut53p2cW54/w8eYD1hADu5qi+xpYAj9gO-dian',
             'url' => 'https://api.kirimwa.id/v1/messages',
             'method' => 'POST',
             'payload' => json_encode([
@@ -97,6 +102,12 @@ class ListPesananController extends Controller
         } catch (Exception $e) {
             print_r($e);
         }
+    }
+
+    public function tes()
+    {
+        $this->kirimPesan(1);
+
     }
 
     function apiKirimWaRequest(array $params) {

@@ -40,6 +40,8 @@ Route::get("listpesanan",[App\Http\Controllers\Admin\ListPesananController::clas
 Route::post("verifikasipesanan",[App\Http\Controllers\Admin\ListPesananController::class,"verifikasipesanan"]);
 Route::post("verifikasipesananselesai",[App\Http\Controllers\Admin\ListPesananController::class,"verifikasipesananselesai"]);
 
+Route::get("sete",[App\Http\Controllers\Admin\ListPesananController::class,"tes"]);
+
 Route::get("laporan",[App\Http\Controllers\Admin\LaporanController::class,"index"]);
 Route::get("laporanpdf",[App\Http\Controllers\Admin\LaporanController::class,"laporanpdf"]);
 Route::get("laporantransaksipdf",[App\Http\Controllers\Admin\LaporanController::class,"laporantransaksipdf"]);
