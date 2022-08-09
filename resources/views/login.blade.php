@@ -37,7 +37,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="p-5">
-                                    <img src="{{asset('public/image/carwash.png')}}" style="width:80px;" class="mx-auto d-block rounded-circle bg-danger" alt="" srcset="">
+                                    <img src="{{asset('public/image/login1.jpg')}}" style="width:80px;" class="mx-auto d-block rounded-circle bg-black" alt="" srcset="">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Masuk</h1>
                                     </div>

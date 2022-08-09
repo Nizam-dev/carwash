@@ -75,13 +75,13 @@ class ListPesananController extends Controller
             
 
         $message = "*M2 AUTOCARE - BANYUWANGI*"
-        ."\n*_CAR WASH-CAFE-DETAILING_*"
+        ."\n*_CAR WASH-DETAILING_*"
         ."\n\nHallo : ".$transaksi->nama
         ."\nKendaraan Anda : ".$transaksi->nama_kendaraan
         ."\nPlat Nomor : ".$transaksi->plat_nomor
         ."\n_Dengan Pesanan Berikut :_ \n" 
         .$pesanan
-        ."\n_Telah Selesai_"
+        ."\n_Telah Selesai._"
         ."\n_Terimakasih Atas Kepercayaan Anda Kepada Kami._"
         ;
 

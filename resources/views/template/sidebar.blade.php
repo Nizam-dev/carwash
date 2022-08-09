@@ -3,10 +3,10 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/')}}">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <img src="{{asset('public/image/carwash.png')}}" style="width:40px;height:40px;">
+        <div class="sidebar-brand-icon rotate-n-10">
+            <img src="{{asset('public/image/m2new.png')}}" style="width:70px;height:60px;">
         </div>
-        <div class="sidebar-brand-text mx-3">Car Wash</div>
+        <!-- <div class="sidebar-brand-text mx-3">Car Wash</div> -->
     </a>
 
     <!-- Divider -->
@@ -34,7 +34,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar"
             style="">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{url('paket')}}">Paket</a>
+                <a class="collapse-item" href="{{url('paket')}}">Car Wash</a>
                 <a class="collapse-item" href="{{url('detailing')}}">Detailing</a>
             </div>
         </div>

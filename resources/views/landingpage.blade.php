@@ -17,16 +17,15 @@
         <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
             <div class="col-lg-8 ftco-animate">
                 <div class="text w-100 text-center mb-md-5 pb-md-5">
-                    <h1 class="mb-4">Cuci &amp; Salon Mobil Profesional</h1>
-                    <p style="font-size: 18px;">Tunggu di rumah saja, jasa cuci dan salon mobil panggilan kami siap
-                        membersihkan mobil Anda kapanpun dibutuhkan.</p>
+                    <h1 class="mb-4">M2 Auto Care</h1>
+                    <p style="font-size: 18px;">M2 Car Wash dilengkapi peralatan lengkap serta teknisi handal yang siap memberikan layanan terbaik untuk Anda. Proses pengerjaan cepat, kendaraan menjadi bersih dan terawat dengan harga terjangkau.</p>
                     <a href="{{url('booking')}}" class="icon-wrap d-flex align-items-center mt-4 justify-content-center">
                         <div class="btn  btn-success">
-                            <i class="fa fa-car"> Layanan</i>
+                            <i class="fa fa-car"> Booking</i>
                         </div>
-                        <div class="heading-title ml-5">
+                        <!-- <div class="heading-title ml-5">
                             <span>Easy steps for wash a car</span>
-                        </div>
+                        </div> -->
                     </a>
                 </div>
             </div>
@@ -77,7 +76,7 @@
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
                 <span class="subheading">Services</span>
-                <h2 class="mb-3">Our Latest Services</h2>
+                <h2 class="mb-3">Carwash Service Flow</h2>
             </div>
         </div>
         <div class="row">
@@ -99,9 +98,9 @@
                     <div class="icon d-flex align-items-center justify-content-center"><span
                             class="fa fa-comments"></span></div>
                     <div class="text w-100">
-                        <h3 class="heading mb-2">Menunggu Pesan Antrian</h3>
+                        <h3 class="heading mb-2">Mendapat Nomor Antrian</h3>
                         <p>
-                            Setelah melakukan booking customer akan mendapat pesan nomor antrian melalui WhatsApp.
+                            Setelah melakukan booking customer akan mendapat nomor antrian.
                         </p>
                     </div>
                 </div>
@@ -125,7 +124,7 @@
                     <div class="text w-100">
                         <h3 class="heading mb-2">Selesai</h3>
                         <p>
-                            Customer mendapat pesan melalui whatsapp ketika mobil selesai.
+                            Customer mendapat pesan melalui WhatsApp ketika mobil selesai.
                         </p>
                     </div>
                 </div>
