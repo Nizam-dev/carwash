@@ -20,6 +20,7 @@
                     <tr>
                         <th>No</th>
                         <th>Bulan</th>
+                        <th>Kategori</th>
                         <th>Nama Paket</th>
                         <th>Jumlah Pesanan</th>
                         <th>Total Pendapatan</th>
@@ -33,6 +34,7 @@
                         <tr>
                             <td>{{$num++}}</td>
                             <td>{{$laporan->bulan}}</td>
+                            <td>Paket Cuci</td>
                             <td>{{$laporan->nama_paket}}</td>
                             <td>{{$laporan->total_pesanan}}</td>
                             <td>@currency($laporan->total_pendapatan)</td>
@@ -42,6 +44,7 @@
                         <tr>
                             <td>{{$num++}}</td>
                             <td>{{$laporan->bulan}}</td>
+                            <td>Paket Detailing</td>
                             <td>{{$laporan->nama_paket}}</td>
                             <td>{{$laporan->total_pesanan}}</td>
                             <td>@currency($laporan->total_pendapatan)</td>

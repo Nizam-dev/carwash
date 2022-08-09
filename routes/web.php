@@ -47,4 +47,5 @@ Route::get("laporanpdf",[App\Http\Controllers\Admin\LaporanController::class,"la
 Route::get("laporantransaksipdf",[App\Http\Controllers\Admin\LaporanController::class,"laporantransaksipdf"]);
 
 Route::resource("profil",App\Http\Controllers\Admin\ProfilController::class);
+Route::resource("pengaturanwhatsapp",App\Http\Controllers\Admin\whatsappController::class);
 
