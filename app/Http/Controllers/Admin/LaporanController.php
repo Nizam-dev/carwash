@@ -63,8 +63,8 @@ class LaporanController extends Controller
         ->get();
 
         $laporan_detailing = paket_detailing::join("pesanan_detailings","pesanan_detailings.paket_detailing_id","paket_detailings.id")
-        ->whereMonth('paket_detailings.created_at', $request->bulan)
-        ->whereYear('paket_detailings.created_at', $request->tahun)
+        ->whereMonth('pesanan_detailings.created_at', $request->bulan)
+        ->whereYear('pesanan_detailings.created_at', $request->tahun)
         ->select(
             DB::raw('sum(pesanan_detailings.harga) as total_pendapatan'), 
             DB::raw('count(pesanan_detailings.harga) as total_pesanan'), 
@@ -75,6 +75,7 @@ class LaporanController extends Controller
         ->groupBy('bulan')
         ->get();
 
+        
         // return view('admin.laporan_pdf',compact('laporan_paket','laporan_detailing'));
         $pdf = PDF::loadview('admin.laporan_pdf',compact('laporan_paket','laporan_detailing'));
     	return $pdf->download('laporan-bulanan-pdf.pdf');
