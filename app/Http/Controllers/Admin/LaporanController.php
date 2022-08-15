@@ -42,7 +42,8 @@ class LaporanController extends Controller
         ->where('transaksis.status','selesai')
         ->select('transaksis.*','customers.nama','kendaraans.nama_kendaraan')
         ->with(['detailing','cuci'])
-        ->get();
+        ->get()
+        ->sortDesc();
 
         return view('admin.laporan',compact('laporan_paket','laporan_detailing','transaksis'));
     }

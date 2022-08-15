@@ -15,7 +15,8 @@ class ListPesananController extends Controller
         ->join('kendaraans','kendaraans.id','transaksis.kendaraan_id')
         ->select('transaksis.*','customers.nama','kendaraans.nama_kendaraan')
         ->with(['detailing','cuci'])
-        ->get();
+        ->get()
+        ->sortDesc();
         return view('admin.listpesanan',compact('pesanans'));
     }
 

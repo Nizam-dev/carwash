@@ -34,7 +34,7 @@
 </div>
 
 
-<section class="ftco-section ftco-no-pt bg-light">
+<!-- <section class="ftco-section ftco-no-pt bg-light">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center ftco-animate mb-5">
@@ -43,10 +43,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="carousel-car owl-carousel">
+                <div class="carousel-car owl-carousel"> -->
                     
-                    @foreach($pakets as $paket)
-                    <div class="item">
+                    <!-- @foreach($pakets as $paket) -->
+                    <!-- <div class="item">
                         <div class="car-wrap rounded ftco-animate">
                             <div class="img rounded text-center">
                             <div class="icon d-flex align-items-center justify-content-center"><span
@@ -61,14 +61,14 @@
                                 <p class="d-flex mb-0 d-block"><a href="{{url('booking')}}" class="btn btn-primary py-2 mr-1">Pesan</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
                             </div>
                         </div>
-                    </div>
-                    @endforeach
+                    </div> -->
+                    <!-- @endforeach -->
                   
-                </div>
+                <!-- </div>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <section class="ftco-section">
