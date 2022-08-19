@@ -12,6 +12,7 @@
                         <th>Plat Nomor</th>
                         <th>Kendaraan</th>
                         <th>Nama Paket</th>
+                        <th>Nama Pegawai</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -40,6 +41,7 @@
                                 @endif
                                 </ul>
                             </td>
+                            <td>{{$pesanan->nama_pegawai}}</td>
                             <td>@currency($pesanan->total)</td>
                            
                         </tr>

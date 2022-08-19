@@ -57,21 +57,40 @@
 
 
     <!-- Area Chart -->
-    <div class="col-md-12">
-        <div class="card shadow mb-4">
+    <!-- <div class="col-md-12">
+        <div class="card shadow mb-4"> -->
             <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Penghasilan Perbulan</h6>
            
-            </div>
+            </div> -->
             <!-- Card Body -->
-            <div class="card-body">
+            <!-- <div class="card-body">
                 <div class="chart-area">
                     <canvas id="myAreaChart"></canvas>
                 </div>
             </div>
         </div>
+    </div> -->
+
+    <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow mb-4">
+        <div class="card-body">
+          <div class="empty-state">
+            <h6 class="mb-5">SISTEM INFORMASI CUCI KENDARAAN DI M2 CAR WASH</h6>
+            <img class="img-fluid" src="{{asset('public/image/m2dashboard.jpg')}}" alt="image" width="500">
+            <!-- <h6 class="mt-5">POLITEKNIK NEGERI BANYUWANGI</h6> -->
+            <p class="lead">
+            Jl. HOS Cokroaminoto No.20 Banyuwangi, Jawa Timur
+            </p>
+            <!-- <a href="#" class="btn btn-warning mt-4">Try Again</a>
+            <a href="#" class="mt-4 bb">Need Help?</a> -->
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
 
 </div>
