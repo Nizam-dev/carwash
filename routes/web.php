@@ -34,6 +34,7 @@ Route::get("dashboard",[App\Http\Controllers\Admin\DashboardController::class,"i
 Route::resource("paket",App\Http\Controllers\Admin\PaketController::class);
 Route::resource("detailing",App\Http\Controllers\Admin\DetailingController::class);
 Route::resource("kendaraan",App\Http\Controllers\Admin\KendaraanController::class);
+Route::resource("karyawan",App\Http\Controllers\Admin\KaryawanController::class);
 
 Route::get("listpesanan",[App\Http\Controllers\Admin\ListPesananController::class,"index"]);
 
@@ -45,6 +46,10 @@ Route::get("sete",[App\Http\Controllers\Admin\ListPesananController::class,"tes"
 Route::get("laporan",[App\Http\Controllers\Admin\LaporanController::class,"index"]);
 Route::get("laporanpdf",[App\Http\Controllers\Admin\LaporanController::class,"laporanpdf"]);
 Route::get("laporantransaksipdf",[App\Http\Controllers\Admin\LaporanController::class,"laporantransaksipdf"]);
+
+Route::get("laporan-karyawan",[App\Http\Controllers\Admin\LaporanKaryawanController::class,"index"]);
+Route::get("laporan-kendaraan",[App\Http\Controllers\Admin\LaporanKendaraanController::class,"index"]);
+
 
 Route::resource("profil",App\Http\Controllers\Admin\ProfilController::class);
 Route::resource("pengaturanwhatsapp",App\Http\Controllers\Admin\whatsappController::class);

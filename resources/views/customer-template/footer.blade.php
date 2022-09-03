@@ -1,4 +1,4 @@
-<footer class="ftco-footer ftco-bg-dark ftco-section">
+<!-- <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md">
@@ -25,17 +25,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center"> -->
 
-                <p>
+                <!-- <p> -->
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script>
+                    <!-- Copyright &copy;<script>
                     document.write(new Date().getFullYear());
                     </script> All rights reserved | This template is made with <i class="icon-heart color-danger"
-                        aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Carwash</a>
+                        aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Carwash</a> -->
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+                <!-- </p>
             </div>
         </div>
-    </div>
-</footer>
+    </div> -->
+<!-- </footer> -->

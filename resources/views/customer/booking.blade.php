@@ -377,7 +377,7 @@
         $("#form-data-kirim").empty()
         let nama = $("input[name='nama']").val()
         let no_hp= $("input[name='no_hp']").val()
-        let alamat= $("input[name='alamat']").val()
+        // let alamat= $("input[name='alamat']").val()
         let jenis_mobil= $("select[name='jenis_mobil']").val()
         let plat_nomor= $("input[name='plat_nomor']").val()
         let paket_cuci = $("input[name='paket_cuci']:checked").val()

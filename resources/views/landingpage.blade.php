@@ -71,7 +71,7 @@
 </section> -->
 
 
-<section class="ftco-section">
+<!-- <section class="ftco-section">
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
@@ -131,7 +131,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 

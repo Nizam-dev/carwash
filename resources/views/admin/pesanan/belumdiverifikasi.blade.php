@@ -11,6 +11,7 @@
                         <th>Plat Nomor</th>
                         <th>Kendaraan</th>
                         <th>Nama Paket</th>
+                        <th>Pesanan Ke</th>
                         <th>Total</th>
                         <th>Option</th>
                     </tr>
@@ -19,6 +20,12 @@
                 <tbody>
                  
                     @foreach($pesanans->where('status','pemesanan') as $pesanan)
+                        <?php
+                            $pesananmobil = App\Models\transaksi::where('plat_nomor',$pesanan->plat_nomor)
+                            ->where('status','selesai')->count();
+                            $pesananke = $pesananmobil % 10 + 1;
+                            $pesananke = $pesananke == 0 ? 10 : $pesananke;
+                        ?>
                         <tr>
                             <td>{{$loop->iteration}}</td>
                             <td>{{$pesanan->created_at->format('d-m-Y(H:i)')}}</td>
@@ -38,6 +45,10 @@
                                     @endforeach
                                 @endif
                                 </ul>
+                            </td>
+                            <td>
+                                {{$pesananke}}
+                                @if($pesananke == 10) <span class="badge badge-success">Pesanan Bonus</span> @endif
                             </td>
                             <td>@currency($pesanan->total)</td>
                             <td>
@@ -74,7 +85,11 @@
                <input type="text" name="id" class="d-none">
                <div class="form-group">
                    <label for="">Masukan Nama Pegawai</label>
-                   <input type="text" name="nama_pegawai" class="form-control" required>
+                   <select name="nama_pegawai"  class="form-control">
+                        @foreach($karyawans as $karyawan)
+                        <option value="{{$karyawan->nama_karyawan}}">{{$karyawan->nama_karyawan}}</option>
+                        @endforeach
+                    </select>
                </div>
       </div>
       <div class="modal-footer">

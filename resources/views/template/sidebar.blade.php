@@ -19,6 +19,12 @@
             <span>Dashboard</span></a>
     </li>
 
+    <li class="nav-item {{request()->is('karyawan') ? 'active':''}}">
+        <a class="nav-link" href="{{url('karyawan')}}">
+            <i class="fas fa-users fa-users-alt"></i>
+            <span>Karyawan</span></a>
+    </li>
+
     <li class="nav-item {{request()->is('kendaraan') ? 'active':''}}">
         <a class="nav-link" href="{{url('kendaraan')}}">
             <i class="fas fa-car fa-car-alt"></i>
@@ -50,8 +56,25 @@
     <li class="nav-item {{request()->is('laporan') ? 'active':''}}">
         <a class="nav-link" href="{{url('laporan')}}">
             <i class="fas fa-file fa-file-alt"></i>
-            <span>Laporan</span></a>
+            <span>Laporan Penjualan</span></a>
     </li>
+
+    <li class="nav-item {{request()->is('laporan-kendaraan') || request()->is('laporan-karyawan') ? 'active':''}}">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2"
+            aria-expanded="false" aria-controls="collapseUtilities2">
+            <i class="fas fa-file fa-file-alt"></i>
+            <span>Laporan</span>
+        </a>
+        <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar"
+            style="">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{url('laporan-karyawan')}}">Karyawan</a>
+                <a class="collapse-item" href="{{url('laporan-kendaraan')}}">No Kendaraan</a>
+            </div>
+        </div>
+    </li>
+
+
 
 
 

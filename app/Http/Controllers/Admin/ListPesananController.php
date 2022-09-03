@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\transaksi;
 use Illuminate\Support\Str;
+use App\Models\karyawan;
+use Exception;
 
 class ListPesananController extends Controller
 {
@@ -17,7 +19,8 @@ class ListPesananController extends Controller
         ->with(['detailing','cuci'])
         ->get()
         ->sortDesc();
-        return view('admin.listpesanan',compact('pesanans'));
+        $karyawans = karyawan::all();
+        return view('admin.listpesanan',compact('pesanans','karyawans'));
     }
 
 
@@ -55,7 +58,7 @@ class ListPesananController extends Controller
         $transaksi = transaksi::where("transaksis.id",$id)
         ->join("customers","customers.id","transaksis.customer_id")
         ->join("kendaraans","kendaraans.id","transaksis.kendaraan_id")
-        ->select("customers.nama","customers.no_wa","customers.alamat","transaksis.*","kendaraans.nama_kendaraan")
+        ->select("customers.nama","customers.no_wa","transaksis.*","kendaraans.nama_kendaraan")
         ->with("cuci")
         ->with("detailing")
         ->first();
@@ -82,6 +85,7 @@ class ListPesananController extends Controller
         ."\nPlat Nomor : ".$transaksi->plat_nomor
         ."\n_Dengan Pesanan Berikut :_ \n" 
         .$pesanan
+        ."\n*_Total Pesanan : Rp. ".number_format($transaksi->total,0,',','.')."_*\n"
         ."\n_Telah Selesai._"
         ."\n_Terimakasih Atas Kepercayaan Anda Kepada Kami._"
         ;
@@ -101,7 +105,7 @@ class ListPesananController extends Controller
         
             $response = $this->apiKirimWaRequest($reqParams);
         } catch (Exception $e) {
-            print_r($e);
+
         }
     }
 
